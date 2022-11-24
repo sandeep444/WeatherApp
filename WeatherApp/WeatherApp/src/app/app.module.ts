@@ -11,12 +11,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ErrorIntercept } from './Common/error.interceptor';
-import { WeatherDashBoardComponent } from './WeatherDashboard/weather-dash-board.component';
+import { ErrorIntercept } from './common/error.interceptor';
+import { WeatherDashBoardComponent } from './weather-dashboard/weather-dash-board.component';
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherDashBoardComponent
+    WeatherDashBoardComponent    
   ],
   imports: [
     BrowserModule,

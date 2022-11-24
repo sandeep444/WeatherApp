@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { CityDetails, HourlyUnits, Result, WeatherDetails } from '../Models/weather.model';
-import { WeatherService } from '../Services/weather.service';
+import { CityDetails, HourlyUnits, Result, WeatherDetails } from '../models/weather.model';
+import { WeatherService } from '../services/weather.service';
 import { tap, startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 @Component({

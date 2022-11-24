@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of, tap } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { CityDetails, WeatherDetails } from '../Models/weather.model';
+import { CityDetails, WeatherDetails } from '../models/weather.model';
 
 @Injectable({
   providedIn: 'root'
