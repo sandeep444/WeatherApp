@@ -13,10 +13,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorIntercept } from './common/error.interceptor';
 import { WeatherDashBoardComponent } from './weather-dashboard/weather-dash-board.component';
+import { LoginComponent } from './login/login.component';
+import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatCheckboxModule} from '@angular/material/checkbox'; 
+import { AuthInterceptor } from './common/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherDashBoardComponent    
+    WeatherDashBoardComponent,
+    LoginComponent    
   ],
   imports: [
     BrowserModule,
@@ -28,21 +39,47 @@ import { WeatherDashBoardComponent } from './weather-dashboard/weather-dash-boar
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     MatAutocompleteModule, 
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule
+
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorIntercept,
       multi: true
-    }
+    },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: AuthInterceptor, 
+      multi: true 
+    },
   ],
   bootstrap: [AppComponent]
 })

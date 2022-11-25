@@ -67,4 +67,9 @@
         public string StatusCode { get; set; }
         public string ErrorMessage { get; set; }
     }
+
+    public class FromBodyModel
+    {
+        public string Key { get; set; }
+    }
 }

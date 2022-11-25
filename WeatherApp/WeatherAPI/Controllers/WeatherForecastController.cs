@@ -1,10 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using WeatherAPI.Models; 
 
 namespace WeatherAPI.Controllers
 {
-    [ApiController]
+    [ApiController]    
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase    {  
 
@@ -15,6 +16,7 @@ namespace WeatherAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("GetCityDetails")]
         public async Task<IActionResult> GetCityDetails(string name)
         {
@@ -41,6 +43,7 @@ namespace WeatherAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         [Route("getWeatherData")]
         public async Task<IActionResult> getWeatherData(string latitude, string longitude,string hourly)
         {

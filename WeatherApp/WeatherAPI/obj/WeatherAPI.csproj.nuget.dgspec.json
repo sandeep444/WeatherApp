@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WeatherAppGit\\WeatherAPI\\WeatherAPI.csproj": {}
+    "D:\\Push\\WeatherApp\\WeatherAPI\\WeatherAPI.csproj": {}
   },
   "projects": {
-    "D:\\WeatherAppGit\\WeatherAPI\\WeatherAPI.csproj": {
+    "D:\\Push\\WeatherApp\\WeatherAPI\\WeatherAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WeatherAppGit\\WeatherAPI\\WeatherAPI.csproj",
+        "projectUniqueName": "D:\\Push\\WeatherApp\\WeatherAPI\\WeatherAPI.csproj",
         "projectName": "WeatherAPI",
-        "projectPath": "D:\\WeatherAppGit\\WeatherAPI\\WeatherAPI.csproj",
+        "projectPath": "D:\\Push\\WeatherApp\\WeatherAPI\\WeatherAPI.csproj",
         "packagesPath": "C:\\Users\\sande\\.nuget\\packages\\",
-        "outputPath": "D:\\WeatherAppGit\\WeatherAPI\\obj\\",
+        "outputPath": "D:\\Push\\WeatherApp\\WeatherAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sande\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.57.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -51,6 +59,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.25.0, )"
             }
           },
           "imports": [

@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { CityDetails, HourlyUnits, Result, WeatherDetails } from '../models/weather.model';
 import { WeatherService } from '../services/weather.service';
 import { tap, startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-weather-dash-board',
   templateUrl: './weather-dash-board.component.html',
@@ -22,7 +24,9 @@ export class WeatherDashBoardComponent {
   options = [];
   filteredOptions: Observable<Result[]>;
 
-  constructor(private weatherService: WeatherService){
+  constructor(private weatherService: WeatherService,private router: Router,
+    private service: AuthService,
+    private _ngZone: NgZone){
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       debounceTime(400),
@@ -69,4 +73,13 @@ export class WeatherDashBoardComponent {
       alert("Please select the city name")
      }
   }
+
+  public logout(){
+    this.service.signOutExternal();
+    localStorage.clear();
+    this._ngZone.run(() => {
+      this.router.navigate(['/']).then(() => window.location.reload());
+    })
+  }
+
 }
